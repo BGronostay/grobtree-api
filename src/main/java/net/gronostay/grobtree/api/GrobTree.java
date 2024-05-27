@@ -1,7 +1,6 @@
 package net.gronostay.grobtree.api;
 
 import net.gronostay.grobtree.api.config.ConfigValueFactory;
-import net.gronostay.grobtree.api.helper.JSONHelper;
 import net.gronostay.grobtree.api.processing.Initializer;
 import net.gronostay.grobtree.api.resources.ExStringFactory;
 import net.gronostay.grobtree.api.resources.ResourceProvider;
@@ -26,9 +25,5 @@ public class GrobTree {
 
     public static ConfigValueFactory getConfigValueFactory() {
         return INITIALIZER.getConfigValueFactory();
-    }
-
-    public static JSONHelper getJSONHelper() {
-        return INITIALIZER.getJSONHelper();
     }
 }
