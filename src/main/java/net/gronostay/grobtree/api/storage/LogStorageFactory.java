@@ -7,5 +7,7 @@ public interface LogStorageFactory {
 
     LogStorageMessages createLogStorageMessages(String description);
 
+    String transform(String input);
+
     String getClipboardContent();
 }
