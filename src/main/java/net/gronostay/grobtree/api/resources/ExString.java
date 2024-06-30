@@ -16,6 +16,15 @@ public interface ExString {
     }
 
     /**
+     * Create a new ExString. Static convenience-method.
+     *
+     * @return the new ExString.
+     */
+    static ExString of() {
+        return create();
+    }
+
+    /**
      * Create a new ExString from an existing String. Static convenience-method.
      *
      * @param text The text to be used.
