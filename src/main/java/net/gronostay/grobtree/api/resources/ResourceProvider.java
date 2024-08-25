@@ -1,6 +1,6 @@
 package net.gronostay.grobtree.api.resources;
 
-import net.gronostay.grobtree.api.GrobTree;
+import net.gronostay.grobtree.api.GlobalService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ import java.util.Map;
 public interface ResourceProvider {
 
     static ResourceProvider getInstance() {
-        return GrobTree.getResourceProvider();
+        return GlobalService.getInstance().getResourceProvider();
     }
 
     /**
@@ -31,7 +31,7 @@ public interface ResourceProvider {
     Icon getIcon(String iconName);
 
     /**
-     * Get all icons.
+     * Get all colors.
      *
      * @return A Map of all colors with their string representation (e.g. "JB.JBColor.RED").
      */
@@ -40,7 +40,7 @@ public interface ResourceProvider {
     /**
      * Get a certain color.
      *
-     * @param colorName The string representation of the color, e.g. "JB.JBColor.RED".
+     * @param colorName The string representation of the color, e.g. "JB.JBColor.RED". Can also be a text attribute in a scheme, e.g. DEFAULT_NUMBER.
      * @return The color or null if no color with the provided name is found.
      */
     Color getColor(String colorName);

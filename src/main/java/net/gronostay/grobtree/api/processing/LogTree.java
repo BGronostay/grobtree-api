@@ -6,7 +6,6 @@ import net.gronostay.grobtree.api.resources.ExString;
 import net.gronostay.grobtree.api.resources.ResourceProvider;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Interface for adding top nodes to the root node.
@@ -71,11 +70,4 @@ public interface LogTree {
      * @return The added node.
      */
     TopLogNode addTopNode(ExString caption, String value, Icon icon, CorrespondingNodeComparer comparer);
-
-    /**
-     * Get the configured color for this line params (e.g. for Level ERROR) or null if not found/configured
-     *
-     * @return the color or null
-     */
-    Color getConfiguredColor();
 }
