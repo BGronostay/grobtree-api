@@ -6,11 +6,9 @@ import java.util.Map;
  * A log storage consisting of separate log messages that are already split in meta-infos and text.
  */
 public interface LogStorageMessages extends LogStorage {
-    void addMessage(String message);
+    LogStorageMessage addMessage(String message);
 
-    void addMessage(Map<String, String> keyValues, String message);
-
-    void addMessage(Map<String, String> keyValues, int length, String message);
+    LogStorageMessage addMessage(Map<String, Object> keyValues, String message);
 
     void clear();
 }

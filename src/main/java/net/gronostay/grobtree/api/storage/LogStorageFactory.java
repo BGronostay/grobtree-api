@@ -5,19 +5,9 @@ package net.gronostay.grobtree.api.storage;
  */
 public interface LogStorageFactory {
     LogStorageString createLogStorageString(String description);
+    LogStorageString createLogStorageString(String description, String content);
 
     LogStorageBuffer createLogStorageBuffer(String description);
 
     LogStorageMessages createLogStorageMessages(String description);
-
-    /**
-     * Can be called to execute the transformations that were selected in the import dialog
-     *
-     * @param input The string to be transformed
-     * @return the transformed string
-     */
-    String transform(String input);
-
-    @Deprecated(forRemoval = true)
-    String getClipboardContent();
 }

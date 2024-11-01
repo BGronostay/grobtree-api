@@ -5,9 +5,9 @@ package net.gronostay.grobtree.api.processing;
  */
 public interface LineParams {
     /**
-     * The length of the part described by the regex.
+     * Get the position of the first char of interest. Often the first char after the recurring part (timestamp/level).
      *
-     * @return The length.
+     * @return The position.
      */
-    int getLength();
+    int getStartPos();
 }

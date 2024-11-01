@@ -8,7 +8,7 @@ public interface LogEntry {
      *
      * @return The length
      */
-    int getLength();
+    int getStartPos();
 
     /**
      * The full text of this log entry.
@@ -16,7 +16,6 @@ public interface LogEntry {
      * @return The text
      */
     String getText();
-
 
     /**
      * Get the configured color for this entry (e.g. for Level ERROR) or null if not found/configured
