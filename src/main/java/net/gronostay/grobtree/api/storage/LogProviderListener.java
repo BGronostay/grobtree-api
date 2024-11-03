@@ -1,7 +1,5 @@
 package net.gronostay.grobtree.api.storage;
 
-import javax.swing.*;
-
 /**
  * An interface for classes that can provide GrobTree with logs from any source.
  */
@@ -13,6 +11,4 @@ public interface LogProviderListener {
      * @return the created log storage
      */
     LogStorage provide(LogStorageFactory logStorageFactory, Importer importer, String log);
-
-    default Icon getIcon() { return null; }
 }

@@ -20,7 +20,7 @@ public interface ResourceProvider {
      *
      * @return A Map of all icons with their string representation (e.g. "JB.AllIcons.Actions.StartDebugger").
      */
-    Map<String, Icon> getIcons();
+    Map<String, Icon> getJBIcons();
 
     /**
      * Get a certain icon.
@@ -28,14 +28,14 @@ public interface ResourceProvider {
      * @param iconName The string representation of the icon, e.g. "JB.AllIcons.Actions.StartDebugger".
      * @return The icon or null if no icon with the provided name is found.
      */
-    Icon getIcon(String iconName);
+    Icon getJBIcon(String iconName);
 
     /**
      * Get all colors.
      *
      * @return A Map of all colors with their string representation (e.g. "JB.JBColor.RED").
      */
-    Map<String, Color> getColors();
+    Map<String, Color> getJBColors();
 
     /**
      * Get a certain color.
@@ -43,5 +43,5 @@ public interface ResourceProvider {
      * @param colorName The string representation of the color, e.g. "JB.JBColor.RED". Can also be a text attribute in a scheme, e.g. DEFAULT_NUMBER.
      * @return The color or null if no color with the provided name is found.
      */
-    Color getColor(String colorName);
+    Color getJBColor(String colorName);
 }
