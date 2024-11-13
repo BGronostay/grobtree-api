@@ -1,5 +1,7 @@
 package net.gronostay.grobtree.api.storage;
 
+import net.gronostay.grobtree.api.processing.LineParams;
+
 import java.util.Map;
 
 /**
@@ -9,6 +11,10 @@ public interface LogStorageMessages extends LogStorage {
     LogStorageMessage addMessage(String message);
 
     LogStorageMessage addMessage(Map<String, Object> keyValues, String message);
+
+    LogStorageMessage addMessage(LineParams lineParams, String text);
+
+    void reverse();
 
     void clear();
 }
