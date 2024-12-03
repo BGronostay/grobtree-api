@@ -10,10 +10,8 @@ public interface Factory {
      * Called when a custom class (e.g. ProcessListener) is to be created.
      *
      * @param uniqueName The unique name of the class to be created as stated in the ConverterConfig file.
+     * @param local    Access to (tab-)local resources etc.
      * @return The created class.
      */
-    @Deprecated
-    default Object create(String uniqueName) { return null; }
-
     Object create(String uniqueName, Local local);
 }
