@@ -7,6 +7,13 @@ import net.gronostay.grobtree.api.global.Local;
  */
 public interface ProcessingListener extends ProcessingListenerBase {
     /**
+     * Called before import or when starting evaluating.
+     *
+     * @param local    Access to (tab-)local resources etc.
+     */
+    default void onPreChecking(Local local) { }
+
+    /**
      * Called for every single log output.
      *
      * @param logEntry The log entry itself

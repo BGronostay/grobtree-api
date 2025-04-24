@@ -9,6 +9,13 @@ import net.gronostay.grobtree.api.processing.ProcessingListenerBase;
  */
 public interface KeyValueProcessingListener extends ProcessingListenerBase {
     /**
+     * Called before import or when starting evaluating.
+     *
+     * @param local    Access to (tab-)local resources etc.
+     */
+    default void onPreChecking(Local local) { }
+
+    /**
      * Called for every single log output.
      *
      * @param logEntry The log entry itself
