@@ -40,7 +40,7 @@ public interface ResourceProvider {
     /**
      * Get a certain color.
      *
-     * @param colorName The string representation of the color, e.g. "JB.JBColor.RED". Can also be a text attribute in a scheme, e.g. DEFAULT_NUMBER.
+     * @param colorName The string representation of the color, e.g. "JB.JBColor.RED". Can also be a text attribute in a scheme, e.g. FC.DEFAULT_NUMBER.
      * @return The color or null if no color with the provided name is found.
      */
     Color getJBColor(String colorName);
