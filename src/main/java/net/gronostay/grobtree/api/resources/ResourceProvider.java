@@ -44,4 +44,11 @@ public interface ResourceProvider {
      * @return The color or null if no color with the provided name is found.
      */
     Color getJBColor(String colorName);
+
+    /**
+     * Get the configured special color.
+     *
+     * @return The color.
+     */
+    Color getSpecialColor();
 }
