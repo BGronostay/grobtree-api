@@ -6,8 +6,11 @@
 
     <groupId>net.gronostay.grobtree</groupId>
     <artifactId>grobtree-api</artifactId>
+    <version>1.4.1</version>
     <packaging>jar</packaging>
-    <version>1.4.0</version>
+    <name>GrobTree API</name>
+    <description>API library for GrobTree IntelliJ plugin</description>
+    <url>https://github.com/BGronostay/grobtree-api</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -15,8 +18,47 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Bernd Gronostay</name>
+            <email>develop@gronostay.net</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/BGronostay/grobtree-api</url>
+        <connection>scm:git:git://github.com/BGronostay/grobtree-api.git</connection>
+        <developerConnection>scm:git:ssh://github.com/BGronostay/grobtree-api.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <profiles>
+        <profile>
+            <id>dryRun</id>
+            <properties>
+                <dryRun>true</dryRun>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.8.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -33,20 +75,35 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>3.1.3</version>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.11.2</version>
                 <executions>
                     <execution>
-                        <phase>deploy</phase>
+                        <id>attach-javadocs</id>
                         <goals>
-                            <goal>install-file</goal>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.2.8</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
                         </goals>
                         <configuration>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                            <version>${project.version}</version>
-                            <packaging>${project.packaging}</packaging>
-                            <file>target/${project.artifactId}-${project.version}.jar</file>
+                            <keyname>A43F8565EFFB12FD5613FA696C9892AC1EB0C266</keyname>
+                            <useAgent>false</useAgent>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
                         </configuration>
                     </execution>
                 </executions>
