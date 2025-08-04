@@ -9,6 +9,6 @@ import net.gronostay.grobtree.api.processing.LogTree;
 import java.util.Map;
 
 public interface PostCreationListener {
-    default void onPayloadNodeCreated(TopLogNode topNode, Map<String, String> valuesMap, SimpleLogNode payloadNode, String payload, Local local) {}
+    default void onPayloadNodeCreated(TopLogNode topNode, Map<String, String> valuesMap, SimpleLogNode payloadNode, String payload) {}
     default void onNoNodeCreated(LogEntry logEntry, LogTree logTree, Local local) {}
 }
