@@ -1,6 +1,6 @@
 package net.gronostay.grobtree.api.resources;
 
-import net.gronostay.grobtree.api.GlobalService;
+import net.gronostay.grobtree.api.context.GlobalContextProvider;
 
 /**
  * A factory for creating ExStrings. Use static ExString methods for convenience.
@@ -13,7 +13,7 @@ public interface ExStringFactory {
      * @return the factory.
      */
     static ExStringFactory getInstance() {
-        return GlobalService.getInstance().getExStringFactory();
+        return GlobalContextProvider.getContext().getExStringFactory();
     }
 
     /**

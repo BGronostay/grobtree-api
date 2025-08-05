@@ -6,7 +6,7 @@
 
     <groupId>net.gronostay.grobtree</groupId>
     <artifactId>grobtree-api</artifactId>
-    <version>1.4.2</version>
+    <version>1.4.3</version>
     <packaging>jar</packaging>
     <name>GrobTree API</name>
     <description>API library for GrobTree IntelliJ plugin</description>

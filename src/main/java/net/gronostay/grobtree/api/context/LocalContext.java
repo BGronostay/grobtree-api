@@ -1,10 +1,15 @@
 package net.gronostay.grobtree.api.context;
 
-import net.gronostay.grobtree.api.global.Local;
+import net.gronostay.grobtree.api.localcontext.Icons;
+import net.gronostay.grobtree.api.localcontext.Variables;
 
-public abstract class LocalContext {
-    static protected Local local;
-    static public Local getContext() {
-        return local;
-    }
+/**
+ * LocalContext gives access to values of the current tab (configured in XML). This is in opposite to GlobalContext.
+ *  Use LocalContextProvider.getContext to get an instance.
+ */
+public interface LocalContext {
+    GlobalContext getGlobal();
+
+    Icons getIcons();
+    Variables getVariables();
 }

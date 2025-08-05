@@ -1,6 +1,6 @@
 package net.gronostay.grobtree.api.config;
 
-import net.gronostay.grobtree.api.GlobalService;
+import net.gronostay.grobtree.api.context.GlobalContextProvider;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -15,7 +15,7 @@ public interface ConfigValueFactory {
      * @return instance of factory
      */
     static ConfigValueFactory getInstance() {
-        return GlobalService.getInstance().getConfigValueFactory();
+        return GlobalContextProvider.getContext().getConfigValueFactory();
     }
 
     /**

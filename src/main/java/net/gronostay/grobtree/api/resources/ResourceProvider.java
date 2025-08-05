@@ -1,6 +1,6 @@
 package net.gronostay.grobtree.api.resources;
 
-import net.gronostay.grobtree.api.GlobalService;
+import net.gronostay.grobtree.api.context.GlobalContextProvider;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +12,7 @@ import java.util.Map;
 public interface ResourceProvider {
 
     static ResourceProvider getInstance() {
-        return GlobalService.getInstance().getResourceProvider();
+        return GlobalContextProvider.getContext().getResourceProvider();
     }
 
     /**
