@@ -3,7 +3,7 @@ package net.gronostay.grobtree.api.processing;
 /**
  * Has to be implemented for receiving infos about log outputs.
  */
-public interface ProcessingListener extends ProcessingListenerBase {
+public interface ProcessingListener {
     /**
      * Called before import or when starting evaluating.
      */
