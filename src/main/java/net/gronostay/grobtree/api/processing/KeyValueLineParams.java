@@ -1,5 +1,6 @@
 package net.gronostay.grobtree.api.processing;
 
+import java.time.OffsetDateTime;
 import java.util.Map;
 
 /**
@@ -17,6 +18,8 @@ public interface KeyValueLineParams {
 
     Map<String, String> getValueToStringMap();
     Map<String, String> getValueToStringMap(Object valueForNullValues);
+
+    void setTimestamp(OffsetDateTime timestamp);
 
     void clear();
 }
