@@ -23,4 +23,6 @@ public interface LogEntry {
      * @return the color or null
      */
     Color getConfiguredColor();
+
+    LineParams getLineParams();
 }

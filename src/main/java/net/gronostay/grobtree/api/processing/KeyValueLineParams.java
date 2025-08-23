@@ -1,13 +1,11 @@
-package net.gronostay.grobtree.api.processing.keyvalue;
-
-import net.gronostay.grobtree.api.processing.LineParams;
+package net.gronostay.grobtree.api.processing;
 
 import java.util.Map;
 
 /**
  * Information about the part covered by the regex to distinguish the lines.
  */
-public interface KeyValueLineParams extends LineParams {
+public interface KeyValueLineParams {
     void set(String key, Object value);
 
     Object getValue(String key);

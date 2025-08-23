@@ -3,7 +3,7 @@ package net.gronostay.grobtree.api.processing;
 /**
  * Information about the part covered by the regex to distinguish the lines.
  */
-public interface LineParams {
+public interface LineParams extends KeyValueLineParams {
     /**
      * Get the position of the first char of interest. Often the first char after the recurring part (timestamp/level).
      *
